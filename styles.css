@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::placeholder {
+  font-size: medium;
+  color: lightslategray;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: transparent
+    url("https://cdn.pixabay.com/photo/2022/03/03/07/35/stock-exchange-7044786_1280.jpg")
+    center center no-repeat;
+  background-size: cover;
+  padding: 0 15px;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+/* .photo-credit {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: .725rem;
+
+  a {
+    color: white;
+    opacity: .5;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+} */
+
+.mortgage-form-wrapper {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  padding: 30px 30px;
+  box-shadow: 0 0 5px rgba(black, 0.25);
+  min-width: 450px;
+
+  @media screen and (max-width: 550px) {
+    min-width: 0;
+    width: 100%;
+  }
+
+  h1 {
+    margin: 0 0 15px;
+    color: #132b4f;
+  }
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  .fa-house {
+    margin-left: 10px;
+  }
+
+  input {
+    transition: all 0.5s ease;
+
+    &[type="number"] {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 100%;
+      font-size: small;
+      padding: 11px;
+
+      &:invalid {
+        background-color: rgba(lightcoral, 0.075);
+        border: 1px solid lightcoral;
+        outline: none;
+      }
+
+      &:empty {
+        background-color: white;
+        border: 1px solid #ddd;
+      }
+
+      &:valid {
+        background-color: rgba(lightseagreen, 0.075);
+        border: 1px solid lightseagreen;
+        outline: none;
+      }
+
+      &.error {
+        background-color: rgba(lightcoral, 0.075);
+        border: 1px solid lightcoral;
+        outline: none;
+
+        &:valid {
+          background-color: rgba(lightseagreen, 0.075);
+          border: 1px solid lightseagreen;
+          outline: none;
+        }
+      }
+    }
+  }
+
+  p {
+    margin: 0 0 15px;
+  }
+
+  label {
+    display: block;
+  }
+}
+
+p.motgage-result {
+  margin: 0 0 15px;
+
+  .error-message {
+    color: lightcoral;
+    font-weight: 700;
+  }
+
+  .success-message {
+    color: lightseagreen;
+    font-weight: 700;
+  }
+}
+
+.mortgage-form--help {
+  font-size: small;
+  font-style: italic;
+  color: #737373;
+  text-align: left;
+  padding-top: 5px;
+}
+
+.mortgage-form--row__button-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+
+  button {
+    border: none;
+    background-color: #132b4f;
+    padding: 12px 20px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: 2px solid #2f65b6;
+    margin: 0 7.5px;
+
+    &:hover,
+    &:focus {
+      background-color: #04152f;
+      outline: 2px solid #04152f;
+    }
+
+    &.form-success,
+    &.disabled {
+      background-color: #a9a9a9;
+      outline: 2px solid #a9a9a9;
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus {
+        background-color: #a9a9a9;
+        outline: 2px solid #a9a9a9;
+      }
+    }
+  }
+}
+
+.reset-btn {
+  display: none;
+}
